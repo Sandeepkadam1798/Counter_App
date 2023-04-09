@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3E8E41;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Counter App</h1>
+    <div id="counter">0</div>
+    <div>
+      <button id="increment">+</button>
+      <button id="decrement">-</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    const counterElement = document.getElementById('counter');
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
+    const resetButton = document.getElementById('reset');
+    let count = 0;
+
+    function updateCounter() {
+      counterElement.innerText = count;
+    }
+
+    function incrementCounter() {
+      count++;
+      updateCounter();
+    }
+
+    function decrementCounter() {
+      count--;
+      updateCounter();
+    }
+
+    function resetCounter() {
+      count = 0;
+      updateCounter();
+    }
+
+    incrementButton.addEventListener('click', incrementCounter);
+    decrementButton.addEventListener('click', decrementCounter);
+    resetButton.addEventListener('click', resetCounter);
+  </script>
+</body>
+</html>
